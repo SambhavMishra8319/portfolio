@@ -1,0 +1,295 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    
+     nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(15, 32, 39, 0.9);
+      padding: 1.5rem 2rem; 
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      animation: slideFade 1s ease-in-out;
+    }
+
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+
+     nav a {
+       color: #00bcd4;
+       text-decoration: none;
+       font-weight: 700;
+       font-size: 1.1rem; 
+       transition: color 0.3s;
+    }
+
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    header {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://images.unsplash.com/photo-1547658717-da2b51169166');
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(2px);
+      text-align: center;
+      padding: 2rem;
+      animation: fadeInBackground 3s ease-in-out;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      text-align: left;
+      padding: 2rem;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .intro-text {
+      max-width: 500px;
+      animation: slideFade 1.5s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      animation: popIn 1.8s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      animation: fadeInUp 2s ease-in;
+    }
+
+    .btn {
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      animation: fadeInUp 2.5s ease-in;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #0097a7;
+    }
+
+    .profile-pic {
+      width: 240px;
+      height: 240px;
+      border: 5px solid #00bcd4;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+      animation: rotateFade 1.5s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
+
+    section {
+      padding: 6rem 2rem 4rem;
+      transition: all 0.4s ease;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      animation: slideIn 1s ease-in;
+    }
+
+    h2 {
+      color: #00bcd4;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #00bcd4;
+      padding-left: 1rem;
+      animation: slideFade 1s ease-in-out;
+    }
+
+    .skills, .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .skill-group {
+      background: #1b2b3a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 500px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .skill-group h3 {
+      color: #00bcd4;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      border-bottom: 2px solid #00bcd4;
+      padding-bottom: 0.5rem;
+    }
+
+    .skill {
+      background: #2a3c4f;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      margin: 0.3rem;
+      display: inline-block;
+      color: #fff;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      animation: fadeInUp 1s ease;
+    }
+
+    .skill:hover {
+      background: #00bcd4;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .project {
+      background: #1b2b3a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      transition: transform 0.3s ease;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+      color: #00bcd4;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeInUp {
+      0% {opacity: 0; transform: translateY(30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideIn {
+      0% {opacity: 0; transform: translateX(-50px);}
+      100% {opacity: 1; transform: translateX(0);}
+    }
+
+    @keyframes slideFade {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes popIn {
+      0% {transform: scale(0.8); opacity: 0;}
+      100% {transform: scale(1); opacity: 1;}
+    }
+
+    @keyframes rotateFade {
+      0% {transform: rotate(-5deg) scale(0.8); opacity: 0;}
+      100% {transform: rotate(0) scale(1); opacity: 1;}
+    }
+
+    @keyframes fadeInBackground {
+      0% {opacity: 0; filter: blur(8px);}
+      100% {opacity: 1; filter: blur(2px);}
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro-text {
+        text-align: center;
+      }
+
+      .profile-pic {
+        width: 160px;
+        height: 160px;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .skills, .projects {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
