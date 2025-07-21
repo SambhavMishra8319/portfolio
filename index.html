@@ -33,7 +33,7 @@
     </div>
   </section>
 
- 
+
   <section id="skills">
   <div class="container">
     <h2>Skills</h2>
@@ -57,7 +57,8 @@
 
       <div class="skill-group">
         <h3>Computer Science Fundamentals</h3>
-        <div class="skill">Data Structures & Algorithms</div>
+        <!-- <div class="skill">Data Structures & Algorithms</div> -->
+        <a href="https://leetcode.com/u/Sambhav_Mishra132/" class="skill">Data Structures & Algorithms</a>
         <div class="skill">Problem Solving</div>
         <div class="skill">Object-Oriented Programming (OOP)</div>
       </div>
@@ -80,7 +81,7 @@
 
       <div class="project">
         <h3>Spotify Clone (TSP Project)</h3>
-        <p>A frontend web application inspired by Spotify's UI/UX, developed as part of the TSP (Traveling Salesman Problem) project. Features include responsive layout, music player UI, and playlist design using HTML, CSS, and JavaScript.</p>
+        <p>A frontend web application inspired by Spotify's UI/UX, . Features include responsive layout, music player UI, and playlist design using HTML, CSS, and JavaScript.</p>
       </div>
 
       <div class="project">
@@ -113,7 +114,7 @@
       <h2>Contact</h2>
       <p>Email: <a href="mailto:sammishr8319@gmail.com">sammishr8319@gmail.com</a></p>
       <p>Phone: <a href="tel:+918319802425">8319802425</a></p>
-      <p>GitHub: <a href="https://github.com/Sambhav-Mishra132" target="_blank" rel="noopener noreferrer">SambhavMishra8319</a></p>
+      <p>GitHub: <a href="https://github.com/SambhavMishra8319" target="_blank" rel="noopener noreferrer">SambhavMishra8319</a></p>
       <p>LeetCode: <a href="https://leetcode.com/u/Sambhav_Mishra132/" target="_blank" rel="noopener noreferrer">Sambhav_Mishra132</a></p>
     </div>
   </section>
@@ -121,21 +122,30 @@
   <footer>
     <p>&copy; Made by Sambhav Mishra. Built using HTML, CSS & JS.</p>
   </footer>
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
 
 </body>
-<nav>
-  <div class="nav-container">
-    <h1 class="logo">Sambhav</h1>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="Sambhav_Resume.pdf" target="_blank">Resume</a></li>
-    </ul>
-  </div>
-</nav>
+  <nav>
+    <div class="nav-container">
+      <h1 class="logo">Sambhav</h1>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="Sambhav_Resume.pdf" target="_blank">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
 
 
 </html>
