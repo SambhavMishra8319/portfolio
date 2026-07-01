@@ -3,529 +3,1029 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sambhav Mishra | Portfolio</title>
+    <title>Sambhav Mishra | Full Stack Developer & AI Engineer</title>
     <meta
       name="description"
-      content="Portfolio of Sambhav Mishra – Full-Stack Developer & AI/Data Science Enthusiast"
+      content="Portfolio of Sambhav Mishra, a Full Stack Developer and AI/Data Science student building production-ready MERN, Firebase, and AI-powered applications."
     />
+    <meta name="author" content="Sambhav Mishra" />
+    <meta property="og:title" content="Sambhav Mishra | Full Stack Developer" />
+    <meta property="og:description" content="Full Stack Developer building production-ready web apps with React, Firebase, Node.js, and AI." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/profile.png" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+        --primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --primary-solid: #667eea;
+        --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --accent: #48bb78;
+        --cyan: #38bdf8;
+        --dark: #080a12;
+        --card: rgba(255, 255, 255, 0.065);
+        --card-strong: rgba(255, 255, 255, 0.1);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: #ffffff;
+        --muted: #cbd5e1;
+        --soft: #94a3b8;
+        --shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+        --navbar-height: 78px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--dark);
+        color: var(--text);
+        overflow-x: hidden;
+        line-height: 1.7;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(circle at 15% 15%, rgba(102, 126, 234, 0.22), transparent 30%),
+          radial-gradient(circle at 85% 10%, rgba(72, 187, 120, 0.16), transparent 28%),
+          radial-gradient(circle at 50% 80%, rgba(245, 87, 108, 0.12), transparent 34%),
+          linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        background-size: auto, auto, auto, 44px 44px, 44px 44px;
+        z-index: -2;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: var(--primary);
+        z-index: 2000;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: var(--navbar-height);
+        background: rgba(8, 10, 18, 0.82);
+        backdrop-filter: blur(22px);
+        border-bottom: 1px solid var(--border);
+        z-index: 1500;
+      }
+
+      nav {
+        max-width: 1250px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-size: 1.45rem;
+        font-weight: 800;
+        text-decoration: none;
+        background: var(--primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 600;
+        transition: 0.25s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--accent);
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 26px;
+        height: 3px;
+        background: #fff;
+        border-radius: 3px;
+        transition: 0.3s ease;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      .section {
+        max-width: 1250px;
+        margin: 0 auto;
+        padding: 6.5rem 5% 3rem;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        margin-bottom: 3rem;
+      }
+
+      .section-title span,
+      .gradient-text {
+        background: var(--primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      #hero {
+        min-height: 100vh;
+        max-width: 1250px;
+        margin: 0 auto;
+        padding: calc(var(--navbar-height) + 3rem) 5% 4rem;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        gap: 4rem;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.5rem 0.9rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 0.88rem;
+        margin-bottom: 1.1rem;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2.75rem, 5.4vw, 5rem);
+        line-height: 1.05;
+        font-weight: 800;
+        letter-spacing: -1.5px;
+        margin-bottom: 1rem;
+      }
+
+      .typing-line {
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .hero-bio {
+        max-width: 650px;
+        color: var(--soft);
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-buttons,
+      .project-links,
+      .contact-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn,
+      .link-btn,
+      .contact-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 999px;
+        transition: 0.3s ease;
+      }
+
+      .btn {
+        padding: 0.95rem 1.55rem;
+      }
+
+      .primary-btn {
+        background: var(--primary);
+        color: #fff;
+        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.22);
+      }
+
+      .secondary-btn {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+      }
+
+      .btn:hover,
+      .contact-btn:hover,
+      .link-btn:hover {
+        transform: translateY(-4px);
+      }
+
+      .hero-card {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        border-radius: 30px;
+        padding: 1.2rem;
+        backdrop-filter: blur(20px);
+      }
+
+      .hero-card img {
+        width: 100%;
+        border-radius: 24px;
+        display: block;
+        aspect-ratio: 1 / 1.08;
+        object-fit: cover;
+      }
+
+      .floating-badge {
+        position: absolute;
+        left: -1.1rem;
+        bottom: 2rem;
+        background: rgba(8, 10, 18, 0.9);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 0.85rem 1rem;
+        box-shadow: var(--shadow);
+      }
+
+      .floating-badge strong {
+        display: block;
+        font-size: 1.3rem;
+      }
+
+      .quick-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .stat-item,
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 1.35rem;
+        backdrop-filter: blur(18px);
+        transition: 0.3s ease;
+      }
+
+      .stat-item:hover,
+      .card:hover,
+      .project-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(72, 187, 120, 0.6);
+        box-shadow: var(--shadow);
+      }
+
+      .stat-item h3 {
+        font-size: 1.7rem;
+        color: #fff;
+      }
+
+      .stat-item p {
+        color: var(--soft);
+        font-size: 0.9rem;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2rem;
+      }
+
+      .card p,
+      .project-card p,
+      .timeline-content p {
+        color: var(--muted);
+      }
+
+      .highlights {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .highlight {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+        color: var(--muted);
+      }
+
+      .highlight i {
+        color: var(--accent);
+        margin-top: 0.25rem;
+      }
+
+      .projects-grid,
+      .skills-grid,
+      .achievement-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.35rem;
+      }
+
+      .project-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 1.55rem;
+        transition: 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card.featured {
+        grid-column: span 2;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.18), rgba(72, 187, 120, 0.09));
+      }
+
+      .project-tech {
+        color: var(--accent);
+        font-weight: 800;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 0.85rem;
+      }
+
+      .project-card h3 {
+        font-size: 1.35rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .feature-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin: 1rem 0 1.2rem;
+      }
+
+      .pill,
+      .skill-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        border-radius: 999px;
+        padding: 0.42rem 0.75rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .link-btn {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--border);
+        color: #fff;
+        font-size: 0.88rem;
+      }
+
+      .skill-category h3 {
+        margin-bottom: 1rem;
+      }
+
+      .skills-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .skill-meter {
+        margin-top: 1rem;
+      }
+
+      .meter-row {
+        margin: 0.8rem 0;
+      }
+
+      .meter-row span {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .meter {
+        height: 9px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .meter div {
+        height: 100%;
+        border-radius: inherit;
+        background: var(--primary);
+      }
+
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 1.2rem;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .timeline-date {
+        color: var(--accent);
+        font-weight: 800;
+      }
+
+      .timeline-content h3 {
+        margin-bottom: 0.35rem;
+      }
+
+      .contact-card {
+        text-align: center;
+        max-width: 850px;
+        margin: 0 auto;
+      }
+
+      .contact-btn {
+        padding: 1rem 1.4rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--border);
+      }
+
+      .social-rail {
+        position: fixed;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        z-index: 100;
+      }
+
+      .social-rail a {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--border);
+        text-decoration: none;
+        transition: 0.3s ease;
+      }
+
+      .social-rail a:hover {
+        background: var(--primary-solid);
+        transform: translateX(4px);
+      }
+
+      .footer {
+        text-align: center;
+        padding: 2.2rem 5%;
+        color: var(--soft);
+        border-top: 1px solid var(--border);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 900px) {
+        :root {
+          --navbar-height: 70px;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          left: -100%;
+          top: var(--navbar-height);
+          width: 100%;
+          flex-direction: column;
+          padding: 2rem 0;
+          background: rgba(8, 10, 18, 0.98);
+          transition: 0.35s ease;
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        #hero,
+        .about-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .quick-stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .project-card.featured {
+          grid-column: span 1;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+        }
+
+        .social-rail {
+          display: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .quick-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-buttons,
+        .contact-links,
+        .project-links {
+          flex-direction: column;
+        }
+
+        .floating-badge {
+          left: 1rem;
+          bottom: 1rem;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <!-- Navbar -->
+    <div class="scroll-progress"></div>
+
+    <div class="social-rail">
+      <a href="mailto:sammishr8319@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/SambhavMishra8319" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sambhav-mishra-6a815a2a4/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://leetcode.com/u/Sambhav_Mishra132/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+    </div>
+
     <header>
-      <nav class="nav">
-        <a href="#" class="logo">Sambhav</a>
+      <nav>
+        <a href="#hero" class="logo">Sambhav</a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#coding">Coding</a></li>
+          <li><a href="#timeline">Journey</a></li>
+          <li><a href="#achievements">Achievements</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#certificate">Certificate</a></li>
-          <li><a href="assets/Resume.pdf" target="_blank">Resume</a></li>
         </ul>
-        <div class="hamburger">
-          <i class="fas fa-bars"></i>
+        <div class="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
         </div>
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <div class="hero-container">
-        <div class="hero-image">
-          <img src="assets/profile.png" alt="Sambhav Mishra" />
-        </div>
-        <div class="hero-content">
-          <h1>Hi, I'm <span>Sambhav Mishra</span></h1>
-          <p class="hero-title">
-            B.Tech Student | Full-Stack Developer & AI/Data Science Enthusiast
-          </p>
+    <main>
+      <section id="hero">
+        <div class="hero-content reveal">
+          <div class="eyebrow"><i class="fas fa-bolt"></i> Available for internships & SDE roles</div>
+          <h1>Hi, I'm <span class="gradient-text">Sambhav Mishra</span></h1>
+          <p class="typing-line">Full Stack Developer • AI Engineer • Problem Solver</p>
           <p class="hero-bio">
-            I design and build scalable, user-focused web applications that
-            bring ideas to life. Currently exploring AI and Machine Learning to
-            integrate intelligent features into my projects.
+            I build production-ready full-stack applications powered by React, Firebase, Node.js, and AI.
+            I love solving real-world problems through scalable software, clean architecture, and intuitive user experiences.
           </p>
           <div class="hero-buttons">
-            <a href="#projects" class="btn primary-btn">Explore Projects</a>
-            <a
-              href="assets/Resume.pdf"
-              target="_blank"
-              class="btn secondary-btn"
-              >View Resume</a
-            >
-            <a
-              href="assets/Travel_Planner_ACL.pdf"
-              target="_blank"
-              class="btn secondary-btn"
-            >
-              View Research Paper
-            </a>
+            <a href="#projects" class="btn primary-btn"><i class="fas fa-rocket"></i> Explore Projects</a>
+            <a href="assets/Resume.pdf" target="_blank" class="btn secondary-btn"><i class="fas fa-file-pdf"></i> View Resume</a>
+            <a href="assets/Travel_Planner_ACL.pdf" target="_blank" class="btn secondary-btn"><i class="fas fa-book-open"></i> Research Paper</a>
+          </div>
+
+          <div class="quick-stats">
+            <div class="stat-item"><h3>750+</h3><p>DSA Problems</p></div>
+            <div class="stat-item"><h3>8.64</h3><p>CGPA</p></div>
+            <div class="stat-item"><h3>7+</h3><p>Production Projects</p></div>
+            <div class="stat-item"><h3>IIIT</h3><p>Dharwad DSAI</p></div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <p>
-          I'm Sambhav Mishra, a 3rd-year B.Tech student specializing in
-          <span class="bold-text"
-            >Data Science and Artificial Intelligence</span
-          >
-          at IIIT Dharwad. I am passionate about solving real-world problems
-          using AI, machine learning, and full-stack web development.
-        </p>
-        <p>
-          As a <span class="bold-text">Full Stack Developer</span>, I design and
-          build scalable, user-focused web applications that bring ideas to
-          life. I work primarily with
-          <span class="bold-text"
-            >React.js, Node.js, Express.js, and MongoDB</span
-          >.
-        </p>
-        <p>
-          I am also exploring
-          <span class="bold-text">AI and Machine Learning</span> to integrate
-          intelligent features into my projects. With proficiency in
-          <span class="bold-text"
-            >Python, C++, HTML, CSS, JavaScript, and React</span
-          >, I continually strengthen my skills in
-          <span class="bold-text">DSA</span>, API integration, and responsive UI
-          design.
-        </p>
-        <p>
-          Beyond coding, I bring leadership, teamwork, and creativity—having
-          served as <span class="bold-text">Sports Captain</span> and
-          <span class="bold-text">Core Vocalist</span>. Currently, I am
-          <span class="bold-text">Co-Lead of the Event Management Club</span> at
-          my institute.
-        </p>
-        <p>
-          My goal is to create impactful tech solutions that
-          <span class="bold-text">blend innovation with real-world value</span>.
-        </p>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Restoria</h3>
-          <p class="project-tech">MERN Stack, Cloudinary, MVC</p>
-          <p>
-            A travel & accommodation platform with user authentication,
-            responsive UI, and listing management.
-          </p>
-          <div class="project-links">
-            <a
-              href="https://restoria.onrender.com"
-              target="_blank"
-              class="link-btn"
-              >View Project <i class="fas fa-external-link-alt"></i
-            ></a>
-            <a
-              href="https://github.com/SambhavMishra8319/Restoria-Airnub-clone"
-              target="_blank"
-              class="link-btn"
-              >GitHub <i class="fab fa-github"></i
-            ></a>
+        <div class="hero-card reveal">
+          <img src="assets/profile.png" alt="Sambhav Mishra profile photo" loading="lazy" />
+          <div class="floating-badge">
+            <strong>React + AI</strong>
+            <span>Builder mindset</span>
           </div>
         </div>
-        <div class="project-card">
-          <h3>Travel Planner</h3>
-          <p class="project-tech">React.js, Node.js, Firebase, Gemini LLM</p>
-          <p>
-            AI-powered web app generating smart itineraries using user
-            preferences, maps, and weather APIs.
-          </p>
-          <div class="project-links">
-            <a
-              href="https://travel-plannar-20.vercel.app/"
-              target="_blank"
-              class="link-btn"
-              >View Project <i class="fas fa-external-link-alt"></i
-            ></a>
-            <a
-              href="https://github.com/SambhavMishra8319/Travel-Plannar"
-              target="_blank"
-              class="link-btn"
-              >GitHub <i class="fab fa-github"></i
-            ></a>
+      </section>
+
+      <section id="about" class="section reveal">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-grid">
+          <div class="card">
+            <p>
+              I am a B.Tech student in <strong>Data Science & Artificial Intelligence at IIIT Dharwad</strong>.
+              My focus is on building useful full-stack products with real users, real dashboards, authentication,
+              payments, analytics, and AI integrations.
+            </p>
+            <br />
+            <p>
+              I have worked with the MERN stack, Firebase, FastAPI, SQL, MongoDB, and modern deployment platforms.
+              Alongside development, I actively practice DSA and have solved 750+ coding problems across platforms.
+            </p>
+          </div>
+
+          <div class="card highlights">
+            <div class="highlight"><i class="fas fa-check-circle"></i><span>Strong foundation in DSA, DBMS, OS, CN, and software engineering.</span></div>
+            <div class="highlight"><i class="fas fa-check-circle"></i><span>Experience building admin dashboards, member portals, and analytics systems.</span></div>
+            <div class="highlight"><i class="fas fa-check-circle"></i><span>Leadership experience as Sports Captain, Core Vocalist, and Event Management Club Co-Lead.</span></div>
+            <div class="highlight"><i class="fas fa-check-circle"></i><span>Interested in backend engineering, AI-powered applications, and scalable systems.</span></div>
           </div>
         </div>
- <!-- gymtrack -->
-        <div class="project-card">
-          <h3>GymTrack</h3>
-          <p class="project-tech">
-            React.js, Firebase, Tailwind CSS, Capacitor
-          </p>
-          <p>
-            GymTrack is a modern workout planner application that helps users
-            plan workouts, track progress, and stay consistent with their
-            fitness goals. It features secure authentication and cross-platform
-            support.
-          </p>
-          <div class="project-links">
-            <a
-              href="https://gymtrack-two.vercel.app/"
-              target="_blank"
-              class="link-btn"
-            >
-              View Project <i class="fas fa-external-link-alt"></i>
-            </a>
-            <a
-              href="https://github.com/SambhavMishra8319/Gym-Track"
-              target="_blank"
-              class="link-btn"
-            >
-              GitHub <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <div class="project-card">
+      </section>
 
+      <section id="projects" class="section reveal">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="projects-grid">
+          <article class="project-card featured">
+            <div class="project-tech"><i class="fas fa-dumbbell"></i> React.js • Firebase Auth • Firestore • Tailwind CSS</div>
+            <h3>F2 FIT-FACTORY — Gym Management CRM</h3>
+            <p>
+              Production-ready gym management platform with separate Admin and Member portals, membership lifecycle,
+              payments, attendance, workout/diet modules, notifications, trainer management, analytics, and backup/restore.
+            </p>
+            <div class="feature-list">
+              <span class="pill">130+ members</span><span class="pill">Admin dashboard</span><span class="pill">Member portal</span>
+              <span class="pill">Payments</span><span class="pill">Attendance</span><span class="pill">BCA tracking</span>
+              <span class="pill">Steam booking</span><span class="pill">Trainer analytics</span><span class="pill">Backup restore</span>
+            </div>
+            <div class="project-links">
+              <a href="https://fit-factory-beta.vercel.app" target="_blank" class="link-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/SambhavMishra8319/FIT-FACTORY" target="_blank" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </article>
 
-          <!-- gyanpath  -->
-  <h3>GyanPath</h3>
-  <p class="project-tech">
-    MERN Stack, Tailwind CSS, Clerk, Stripe, Cloudinary
-  </p>
+          <article class="project-card">
+            <div class="project-tech"><i class="fas fa-robot"></i> React.js • Node.js • Firebase • Gemini LLM</div>
+            <h3>AI Travel Planner</h3>
+            <p>
+              AI-powered itinerary generator that creates personalized travel plans using user preferences,
+              Google Maps API, real-time weather, and Gemini LLM recommendations.
+            </p>
+            <div class="feature-list"><span class="pill">Gemini AI</span><span class="pill">Maps API</span><span class="pill">Weather API</span></div>
+            <div class="project-links">
+              <a href="https://travel-plannar-20.vercel.app/" target="_blank" class="link-btn"><i class="fas fa-external-link-alt"></i> Live</a>
+              <a href="https://github.com/SambhavMishra8319/Travel-Plannar" target="_blank" class="link-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-tech"><i class="fas fa-plane"></i> MERN • Cloudinary • MVC Architecture</div>
+            <h3>Restoria</h3>
+            <p>
+              Full-stack travel and accommodation platform with authentication, property listing management,
+              image uploads, REST APIs, responsive UI, and MVC architecture.
+            </p>
+            <div class="feature-list"><span class="pill">MERN</span><span class="pill">Cloudinary</span><span class="pill">MVC</span></div>
+            <div class="project-links">
+              <a href="https://restoria.onrender.com" target="_blank" class="link-btn"><i class="fas fa-external-link-alt"></i> Live</a>
+              <a href="https://github.com/SambhavMishra8319/Restoria-Airnub-clone" target="_blank" class="link-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-tech"><i class="fas fa-graduation-cap"></i> MERN • Clerk • Stripe • Cloudinary</div>
+            <h3>GyanPath LMS</h3>
+            <p>
+              Learning Management System with educator dashboard, student enrollment, course creation,
+              secure Stripe payments, Clerk authentication, and media storage.
+            </p>
+            <div class="feature-list"><span class="pill">Clerk Auth</span><span class="pill">Stripe</span><span class="pill">Courses</span></div>
+            <div class="project-links">
+              <a href="https://lms-frontend-five-sand.vercel.app/" target="_blank" class="link-btn"><i class="fas fa-external-link-alt"></i> Live</a>
+              <a href="https://github.com/SundaramDev/Learning-management-system" target="_blank" class="link-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+  <div class="project-tech">
+    <i class="fas fa-dumbbell"></i> React.js, Firebase Auth, Firestore,
+    Tailwind CSS, Diet & Workout Tracking
+  </div>
+  <h3>GymTrack</h3>
   <p>
-    GyanPath is a modern Learning Management System (LMS) that enables educators to manage courses and students to learn seamlessly. It features secure login, payment integration, and cloud storage for media and resources.
+    Full-stack fitness tracking app with secure Firebase authentication,
+    personalized workout plans, daily workout logging, progress analytics,
+    exercise history, diet planning, meal tracking, calorie goals, and
+    nutrition-focused dashboards to help users manage both training and diet
+    in one platform.
   </p>
   <div class="project-links">
     <a
-      href="https://lms-frontend-five-sand.vercel.app/"
+      href="https://gymtrack-two.vercel.app/"
       target="_blank"
       class="link-btn"
+      ><i class="fas fa-external-link-alt"></i>Live Demo</a
     >
-      View Project <i class="fas fa-external-link-alt"></i>
-    </a>
     <a
-      href="https://github.com/SundaramDev/Learning-management-system"
+      href="https://github.com/SambhavMishra8319/Gym-Track"
       target="_blank"
       class="link-btn"
+      ><i class="fab fa-github"></i>GitHub</a
     >
-      GitHub <i class="fab fa-github"></i>
-    </a>
   </div>
-</div>
 
-        <!-- sporty clone  -->
-        <div class="project-card">
-          <h3>Spotify Clone</h3>
-          <p class="project-tech">HTML, CSS</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-tech"><i class="fas fa-music"></i> HTML • CSS • Responsive UI</div>
+            <h3>Spotify Clone</h3>
+            <p>
+              Responsive Spotify web player clone with modern UI, music cards, hover animations,
+              theme styling, and mobile-first layout.
+            </p>
+            <div class="feature-list"><span class="pill">Responsive</span><span class="pill">UI Clone</span><span class="pill">CSS</span></div>
+            <div class="project-links">
+              <a href="https://spotify-web-player-clone-eight.vercel.app/" target="_blank" class="link-btn"><i class="fas fa-external-link-alt"></i> Live</a>
+              <a href="https://github.com/SambhavMishra8319/spotify-web-player-clone" target="_blank" class="link-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section reveal">
+        <h2 class="section-title">Tech <span>Stack</span></h2>
+        <div class="skills-grid">
+          <div class="card skill-category">
+            <h3><i class="fas fa-code"></i> Languages</h3>
+            <div class="skills-tags">
+              <span class="skill-tag"><i class="fab fa-python"></i>Python</span>
+              <span class="skill-tag"><i class="fas fa-code"></i>C++</span>
+              <span class="skill-tag"><i class="fab fa-js-square"></i>JavaScript</span>
+              <span class="skill-tag"><i class="fab fa-html5"></i>HTML5</span>
+              <span class="skill-tag"><i class="fab fa-css3-alt"></i>CSS3</span>
+            </div>
+          </div>
+
+          <div class="card skill-category">
+            <h3><i class="fas fa-layer-group"></i> Frontend</h3>
+            <div class="skills-tags">
+              <span class="skill-tag"><i class="fab fa-react"></i>React.js</span>
+              <span class="skill-tag"><i class="fas fa-cubes"></i>Next.js</span>
+              <span class="skill-tag"><i class="fas fa-wand-magic-sparkles"></i>Tailwind</span>
+              <span class="skill-tag"><i class="fab fa-bootstrap"></i>Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="card skill-category">
+            <h3><i class="fas fa-server"></i> Backend & Database</h3>
+            <div class="skills-tags">
+              <span class="skill-tag"><i class="fab fa-node-js"></i>Node.js</span>
+              <span class="skill-tag"><i class="fas fa-server"></i>Express.js</span>
+              <span class="skill-tag"><i class="fas fa-database"></i>MongoDB</span>
+              <span class="skill-tag"><i class="fas fa-database"></i>MySQL</span>
+              <span class="skill-tag"><i class="fas fa-fire"></i>Firebase</span>
+              <span class="skill-tag"><i class="fas fa-bolt"></i>FastAPI</span>
+            </div>
+          </div>
+
+          <div class="card skill-category">
+            <h3><i class="fas fa-robot"></i> AI / ML</h3>
+            <div class="skills-tags">
+              <span class="skill-tag"><i class="fas fa-brain"></i>Gemini LLM</span>
+              <span class="skill-tag"><i class="fas fa-chart-line"></i>Scikit-learn</span>
+              <span class="skill-tag"><i class="fas fa-calculator"></i>NumPy</span>
+              <span class="skill-tag"><i class="fas fa-table"></i>Pandas</span>
+            </div>
+          </div>
+
+          <div class="card skill-category">
+            <h3><i class="fas fa-chart-simple"></i> Core Strength</h3>
+            <div class="skill-meter">
+              <div class="meter-row"><span><b>React + UI</b><b>95%</b></span><div class="meter"><div style="width:95%"></div></div></div>
+              <div class="meter-row"><span><b>Firebase</b><b>92%</b></span><div class="meter"><div style="width:92%"></div></div></div>
+              <div class="meter-row"><span><b>Node Backend</b><b>88%</b></span><div class="meter"><div style="width:88%"></div></div></div>
+              <div class="meter-row"><span><b>DSA</b><b>90%</b></span><div class="meter"><div style="width:90%"></div></div></div>
+            </div>
+          </div>
+
+          <div class="card skill-category">
+            <h3><i class="fas fa-tools"></i> Tools</h3>
+            <div class="skills-tags">
+              <span class="skill-tag"><i class="fab fa-git-alt"></i>Git</span>
+              <span class="skill-tag"><i class="fab fa-github"></i>GitHub</span>
+              <span class="skill-tag"><i class="fas fa-cloud"></i>Vercel</span>
+              <span class="skill-tag"><i class="fas fa-terminal"></i>Postman</span>
+              <span class="skill-tag"><i class="fas fa-cloud-upload-alt"></i>Cloudinary</span>
+              <span class="skill-tag"><i class="fab fa-docker"></i>Docker</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section reveal">
+        <h2 class="section-title">Journey & <span>Leadership</span></h2>
+        <div class="timeline">
+          <div class="timeline-item card">
+            <div class="timeline-date">2023 - 2027</div>
+            <div class="timeline-content">
+              <h3>B.Tech in Data Science & Artificial Intelligence</h3>
+              <p>Indian Institute of Information Technology, Dharwad. Current CGPA: 8.46/10.</p>
+            </div>
+          </div>
+          <div class="timeline-item card">
+            <div class="timeline-date">2026</div>
+            <div class="timeline-content">
+              <h3>F2 FIT-FACTORY CRM</h3>
+              <p>Built a production-grade gym management system with admin/member portals, analytics, payments, and Firebase real-time data.</p>
+            </div>
+          </div>
+          <div class="timeline-item card">
+            <div class="timeline-date">Leadership</div>
+            <div class="timeline-content">
+              <h3>Sports Captain • Core Vocalist • Event Management Co-Lead</h3>
+              <p>Led teams, coordinated events, and contributed to campus cultural and sports activities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements" class="section reveal">
+        <h2 class="section-title">Achievements & <span>Profiles</span></h2>
+        <div class="achievement-grid">
+          <div class="card">
+            <h3><i class="fas fa-code"></i> LeetCode</h3>
+            <p>750+ algorithmic problems solved, strengthening DSA, optimization, and debugging skills.</p>
+            <br />
+            <a href="https://leetcode.com/u/Sambhav_Mishra132/" target="_blank" class="link-btn">View Profile</a>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-laptop-code"></i> Code360</h3>
+            <p>Coding challenges, assessments, and skill practice profile on Naukri Code360.</p>
+            <br />
+            <a href="https://www.naukri.com/code360/profile/66174f2d-5bdc-41dc-8d25-f8382240e573" target="_blank" class="link-btn">View Profile</a>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-book-open"></i> Research Paper</h3>
+            <p>Research work related to AI travel planning and intelligent recommendation systems.</p>
+            <br />
+            <a href="assets/Travel_Planner_ACL.pdf" target="_blank" class="link-btn">Read Paper</a>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-certificate"></i> Certifications</h3>
+            <p>Completed Full Stack Web Development and Database Management System certifications.</p>
+            <br />
+            <div class="project-links">
+              <a href="assets/sigma apna college.pdf" target="_blank" class="link-btn">Web Dev</a>
+              <a href="assets/dbms udemy.pdf" target="_blank" class="link-btn">DBMS</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section reveal">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="card contact-card">
           <p>
-            A responsive clone showcasing UI/UX design, recently played songs,
-            and music cards.
+            Open to internships, software engineering roles, full-stack projects, and AI-powered product collaborations.
           </p>
-          <div class="project-links">
-            <a
-              href="https://spotify-web-player-clone-eight.vercel.app/"
-              target="_blank"
-              class="link-btn"
-              >View Project <i class="fas fa-external-link-alt"></i
-            ></a>
-            <a
-              href="https://github.com/SambhavMishra8319/spotify-web-player-clone"
-              target="_blank"
-              class="link-btn"
-              >GitHub <i class="fab fa-github"></i
-            ></a>
+          <br />
+          <div class="contact-links">
+            <a href="mailto:sammishr8319@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
+            <a href="tel:+918319802425" class="contact-btn"><i class="fas fa-phone"></i> Phone</a>
+            <a href="https://www.linkedin.com/in/sambhav-mishra-6a815a2a4/" target="_blank" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/SambhavMishra8319" target="_blank" class="contact-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="assets/Resume.pdf" target="_blank" class="contact-btn"><i class="fas fa-file-pdf"></i> Resume</a>
           </div>
         </div>
-        <div class="project-card">
-          <h3>Photography Portfolio</h3>
-          <p class="project-tech">HTML, CSS</p>
-          <p>
-            A clean and minimal portfolio website showcasing photography samples
-            with a responsive layout for desktop and mobile.
-          </p>
-          <div class="project-links">
-            <a
-              href="https://photography-studio-navbar.vercel.app/
-"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-btn"
-            >
-              View Project <i class="fas fa-external-link-alt"></i>
-            </a>
-            <a
-              href="https://github.com/SambhavMishra8319/-Photography-Studio-Navbar"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-btn"
-            >
-              GitHub Repo <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
+      </section>
+    </main>
 
-       <!--face recognition -->
-        <div class="project-card">
-  <h3>Indian Celebrity Face Recognition</h3>
-  <p class="project-tech">Python, PyTorch, OpenCV, Transfer Learning</p>
-  <p>
-    Deep learning-based face recognition system trained on 6 celebrity classes
-    using ResNet18 with data augmentation, achieving 85%+ validation accuracy
-    and real-time webcam inference.
-  </p>
-  <div class="project-links">
-    <!-- <a
-      href="YOUR_DEMO_LINK_IF_ANY"
-      target="_blank"
-      class="link-btn"
-      >Live Demo <i class="fas fa-external-link-alt"></i
-    ></a> -->
-    <a
-      href="https://github.com/SambhavMishra8319/Indian-Celebrity-Face-Recognition"
-      target="_blank"
-      class="link-btn"
-      >GitHub <i class="fab fa-github"></i
-    ></a>
-  </div>
-</div>
-
-
-        <!-- Portfolio Project -->
-        <div class="project-card">
-          <h3>Portfolio Project</h3>
-          <p class="project-tech">HTML, CSS</p>
-          <p>
-            A personal portfolio website to display projects, skills, and
-            experience with a modern, professional design.
-          </p>
-          <div class="project-links">
-            <a
-              href="https://sambhavmishra8319.github.io/portfolio/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-btn"
-            >
-              View Project <i class="fas fa-external-link-alt"></i>
-            </a>
-            <a
-              href="https://github.com/SambhavMishra8319/portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-btn"
-            >
-              GitHub Repo <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section skills">
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="skills-grid">
-        <!-- Languages -->
-        <div class="skill-category">
-          <h3>Languages</h3>
-          <ul>
-            <li><i class="fab fa-python"></i> Python</li>
-            <li><i class="fas fa-code"></i> C++</li>
-            <li><i class="fab fa-js-square"></i> JavaScript</li>
-            <li><i class="fab fa-html5"></i> HTML</li>
-            <li><i class="fab fa-css3-alt"></i> CSS</li>
-          </ul>
-        </div>
-        <!-- Frameworks -->
-        <div class="skill-category">
-          <h3>Frameworks & Libraries</h3>
-          <ul>
-            <li><i class="fab fa-react"></i> React.js</li>
-            <li><i class="fab fa-node-js"></i> Node.js</li>
-            <li><i class="fas fa-server"></i> Express.js</li>
-            <li><i class="fas fa-cogs"></i> Next.js</li>
-            <li><i class="fas fa-cogs"></i> Tailwind CSS</li>
-          </ul>
-        </div>
-        <!-- Databases -->
-        <div class="skill-category">
-          <h3>Databases</h3>
-          <ul>
-            <li><i class="fas fa-database"></i> MongoDB</li>
-            <li><i class="fas fa-database"></i> MySQL</li>
-            <li><i class="fas fa-fire"></i> Firebase</li>
-          </ul>
-        </div>
-        <!-- Tools & DevOps -->
-        <div class="skill-category">
-          <h3>Tools & DevOps</h3>
-          <ul>
-            <li><i class="fab fa-git-alt"></i> Git</li>
-            <li><i class="fas fa-laptop-code"></i> VS Code</li>
-            <li><i class="fas fa-cloud"></i> Vercel</li>
-            <li><i class="fas fa-terminal"></i> Postman</li>
-          </ul>
-        </div>
-        <!-- AI/ML Tools -->
-        <div class="skill-category">
-          <h3>AI / ML</h3>
-          <ul>
-            <li><i class="fas fa-robot"></i> Gemini LLM</li>
-            <li><i class="fas fa-chart-line"></i> scikit-learn</li>
-            <li><i class="fas fa-calculator"></i> NumPy</li>
-            <li><i class="fas fa-brain"></i> Pandas</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certificates Section -->
-
-    <section id="certificate" class="section certifications fade-in-up-delay">
-      <h2 class="section-title">Certifications</h2>
-      <div class="certifications-grid projects-grid">
-        <!-- DBMS and SQL Certification -->
-        <div class="project-card">
-          <h3>Database Management Systems (RDBMS) & MS Fabric SQL</h3>
-          <p class="project-tech">Udemy - Atchyut Kumar, Edufulness EFN</p>
-          <p>
-            Mastery of relational database systems, SQL querying, transaction
-            management, and essential database design principles.
-          </p>
-          <div class="project-links">
-            <a
-              href="./assets/dbms udemy.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-btn"
-            >
-              View Certificate <i class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Full Stack Development Certification -->
-        <div class="project-card">
-          <h3>Full Stack Web Development</h3>
-          <p class="project-tech">Apna College - Shradha Khapra</p>
-          <p>
-            Completed comprehensive training covering modern front-end (HTML,
-            CSS, JavaScript, React) and back-end technologies (Node.js, Express,
-            MongoDB).
-          </p>
-          <div class="project-links">
-            <a
-              href="assets/sigma apna college.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-btn"
-            >
-              View Certificate <i class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Coding Section -->
-    <section id="coding" class="section coding">
-      <h2 class="section-title">Coding & Competitions</h2>
-      <p
-        style="
-          text-align: center;
-          max-width: 700px;
-          margin: 0 auto;
-          color: #ecf0f1;
-        "
-      >
-        I actively solve problems on coding platforms to sharpen my
-        problem-solving and algorithmic skills.
-      </p>
-      <div class="projects-grid">
-        <div class="project-card">
-          <i class="fas fa-code"></i>
-          <h3>LeetCode</h3>
-          <p>Check my problem-solving progress and challenges.</p>
-          <div class="project-links">
-            <a
-              href="https://leetcode.com/u/Sambhav_Mishra132/"
-              target="_blank"
-              class="link-btn"
-              >Visit <i class="fas fa-external-link-alt"></i
-            ></a>
-          </div>
-        </div>
-        <div class="project-card">
-          <i class="fab fa-hackerrank"></i>
-          <h3>Code360</h3>
-          <p>Explore my coding achievements and certifications.</p>
-          <div class="project-links">
-            <a
-              href="https://www.naukri.com/code360/profile/66174f2d-5bdc-41dc-8d25-f8382240e573"
-              target="_blank"
-              class="link-btn"
-              >Visit <i class="fas fa-external-link-alt"></i
-            ></a>
-          </div>
-        </div>
-        <div class="project-card">
-          <i class="fas fa-trophy"></i>
-          <h3>Codeforces</h3>
-          <p>Competitive programming contests and ratings.</p>
-          <div class="project-links">
-            <a href="https://codeforces.com/" target="_blank" class="link-btn"
-              >Visit <i class="fas fa-external-link-alt"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact-links">
-        <a href="mailto:sammishr8319@gmail.com" class="contact-btn"
-          ><i class="fas fa-envelope"></i> Email</a
-        >
-        <a
-          href="https://www.linkedin.com/in/sambhav-mishra-6a815a2a4/"
-          target="_blank"
-          class="contact-btn"
-          ><i class="fab fa-linkedin"></i> LinkedIn</a
-        >
-        <a
-          href="https://github.com/SambhavMishra8319"
-          target="_blank"
-          class="contact-btn"
-          ><i class="fab fa-github"></i> GitHub</a
-        >
-      </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2025 Sambhav Mishra. All rights reserved.</p>
+      <p>© 2026 Sambhav Mishra. Designed & Developed with React-level thinking, clean CSS, and builder energy.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+      const progress = document.querySelector(".scroll-progress");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (event) {
+          const target = document.querySelector(this.getAttribute("href"));
+          if (!target) return;
+          event.preventDefault();
+          const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--navbar-height"));
+          const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight + 2;
+          window.scrollTo({ top, behavior: "smooth" });
+        });
+      });
+
+      const sections = document.querySelectorAll("section[id]");
+      const revealItems = document.querySelectorAll(".reveal");
+
+      function onScroll() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = `${(scrollTop / docHeight) * 100}%`;
+
+        let current = "";
+        sections.forEach((section) => {
+          if (scrollTop >= section.offsetTop - 180) current = section.id;
+        });
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+        });
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+    </script>
   </body>
 </html>
-
